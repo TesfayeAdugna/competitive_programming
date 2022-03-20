@@ -8,7 +8,6 @@ class Solution:
         stack = []
         output = [0]*len(temperatures)
         
-        #keeping future warmer temp in dictionary
         for i in range(len(temperatures)):
             if len(stack)>0 and temperatures[i] > stack[-1][-1]:
                 for j in range(len(stack)):
