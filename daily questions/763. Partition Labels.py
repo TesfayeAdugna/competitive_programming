@@ -7,12 +7,12 @@ class Solution:
                 
         count = Counter(s)
         
-        lst = []
+        temp = 0
         dic = {}
         output = []
         
         for ele in s:
-            lst.append(ele)
+            temp +=1
             count[ele]-=1
             if count[ele] < 1 and ele in dic:
                 dic.pop(ele)
@@ -20,8 +20,8 @@ class Solution:
                 dic[ele] = 1
                 
             if len(dic)<1:
-                output.append(len(lst))
-                lst = []
+                output.append(temp)
+                temp = 0
                 
         return output
                         
