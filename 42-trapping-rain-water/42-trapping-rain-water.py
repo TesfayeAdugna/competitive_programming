@@ -28,14 +28,3 @@ class Solution:
             
         return maxArea
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
