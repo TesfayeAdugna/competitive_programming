@@ -3,6 +3,9 @@ class Solution:
         
         
         
+        
+        
+        @lru_cache
         def predict(i, j):
             if i == j:
                 return nums[i]
