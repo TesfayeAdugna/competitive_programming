@@ -4,9 +4,6 @@ class Solution:
         if n == 0:
             return 1
 
-        if n < 0:
-            x = 1/x
-            n = abs(n)
         dp = {}
         def fn(n):
             if n == 1:
@@ -15,4 +12,5 @@ class Solution:
                 dp[n] = fn(n//2) * fn(n-n//2)
             return dp[n]
         
-        return fn(n)
+        res = fn(abs(n))
+        return res if n>=0 else 1/res
