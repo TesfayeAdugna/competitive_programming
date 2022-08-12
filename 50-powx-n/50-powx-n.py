@@ -11,9 +11,7 @@ class Solution:
         def fn(n):
             if n == 1:
                 return x
-            if n in dp:
-                return dp[n]
-            else:
+            if n not in dp:
                 dp[n] = fn(n//2) * fn(n-n//2)
             return dp[n]
         
