@@ -7,11 +7,14 @@ class Solution:
         if n < 0:
             x = 1/x
             n = abs(n)
-        @lru_cache
+        dp = {}
         def fn(n):
             if n == 1:
                 return x
-            
-            return fn(n//2) * fn(n - n//2)
+            if n in dp:
+                return dp[n]
+            else:
+                dp[n] = fn(n//2) * fn(n-n//2)
+            return dp[n]
         
         return fn(n)
