@@ -1,6 +1,6 @@
 class Node:
     def __init__(self):
-        self.children = [None]*26
+        self.children = {}
         self.isEnd = False
 
         
@@ -10,32 +10,31 @@ class Trie:
         self.node = Node()
 
     def insert(self, word: str) -> None:
-        curr = self.node
+        current = self.node
         for char in word:
-            if curr.children[ord(char)-ord('a')] == None:
-                temp = Node()
-                curr.children[ord(char)-ord('a')] = temp
-            curr = curr.children[ord(char)-ord('a')]
-            
-        curr.isEnd = True
-
+            if char not in current.children:
+                current.children[char] = Node()
+            current = current.children[char]
+        
+        current.isEnd = True
+        
     def search(self, word: str) -> bool:
-        curr = self.node
+        current = self.node
         for char in word:
-            if curr.children[ord(char)-ord('a')] == None:
+            if char not in current.children:
                 return False
-            curr = curr.children[ord(char)-ord('a')]
-            
-        return curr.isEnd
+            current = current.children[char]
+        
+        return current.isEnd        
 
     def startsWith(self, prefix: str) -> bool:
-        curr = self.node
+        current = self.node
         for char in prefix:
-            if curr.children[ord(char)-ord('a')] == None:
+            if char not in current.children:
                 return False
-            curr = curr.children[ord(char)-ord('a')]
-
-        return True
+            current = current.children[char]
+            
+        return True        
         
 
 
