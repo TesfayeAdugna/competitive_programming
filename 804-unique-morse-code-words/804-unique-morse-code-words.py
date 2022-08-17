@@ -1,10 +1,6 @@
 class Solution:
     def uniqueMorseRepresentations(self, words: List[str]) -> int:
-        
-        
-        
-        
-        
+
         
         dic = {
             'a': ".-",
@@ -37,11 +33,11 @@ class Solution:
         
         Answer = set()
         for word in words:
-            temp = ""
+            temp = []
             for char in word:
-                temp += dic[char]
+                temp.append(dic[char])
             
-            Answer.add(temp)
+            Answer.add("".join(temp))
         return len(Answer)
         
         
