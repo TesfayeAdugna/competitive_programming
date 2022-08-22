@@ -5,7 +5,14 @@ class Solution:
         
         
         
-        while n != 0 and n%4 == 0:
-            n = n//4
+        
+        def powerOfFour(n):
+            if n == 1:
+                return True
+            if n == 0 or n%4 != 0:
+                return False
             
-        return n == 1
+            return powerOfFour(n//4)
+            
+        return powerOfFour(n)
+        
