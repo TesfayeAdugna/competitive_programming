@@ -3,16 +3,11 @@ class Solution:
         
         
         
-        
-        
-        
-        def powerOfFour(n):
-            if n == 1:
+        init = 1
+        while init <= n:
+            if init ^ n == 0:
                 return True
-            if n == 0 or n%4 != 0:
-                return False
-            
-            return powerOfFour(n//4)
-            
-        return powerOfFour(n)
+            init *=4
         
+        return False
+                
