@@ -15,12 +15,12 @@ class Solution:
                 queue.append(i)
                 
         # topological sort algorithm bfs approach.
-        topological_sequence = []
+        # topological_sequence = []
         total_courses = 0
         while queue:
             course = queue.popleft()
             total_courses += 1
-            topological_sequence.append(course)
+            # topological_sequence.append(course)
             for prerequisite in graph[course]:
                 visited[prerequisite] -= 1
                 if visited[prerequisite] == 0:
