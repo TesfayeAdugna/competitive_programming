@@ -14,21 +14,14 @@ class Solution:
             if visited[i] == 0:
                 queue.append(i)
                 
-        # topological sort algorithm bfs approach.
-        # topological_sequence = []
+        # topological sort algorithm - bfs approach.
         total_courses = 0
         while queue:
             course = queue.popleft()
             total_courses += 1
-            # topological_sequence.append(course)
             for prerequisite in graph[course]:
                 visited[prerequisite] -= 1
                 if visited[prerequisite] == 0:
                     queue.append(prerequisite)
                     
         return total_courses == numCourses
-    
-    
-    
-    
-    
