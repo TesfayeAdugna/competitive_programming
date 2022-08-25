@@ -1,13 +1,12 @@
 class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
         
-
-        magazineL = []
-        for c in magazine:
-            magazineL.append(c)
-        for c in ransomNote:
-            if c in magazineL:
-                magazineL.remove(c)
-            else:
+        
+        
+        ransom = Counter(ransomNote)
+        magazin = Counter(magazine)
+        
+        for key in ransom:
+            if key not in magazin or magazin[key] < ransom[key]:
                 return False
         return True
