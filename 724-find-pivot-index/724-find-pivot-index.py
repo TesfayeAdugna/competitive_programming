@@ -7,18 +7,13 @@ class Solution:
         for i in range(len(nums)):
             if not prefixsum:
                 prefixsum.append(nums[i])
-            else:
-                prefixsum.append(prefixsum[-1] + nums[i])
-            
-            if not suffixsum:
                 suffixsum.append(nums[-i-1])
             else:
+                prefixsum.append(prefixsum[-1] + nums[i])
                 suffixsum.append(suffixsum[-1] + nums[-i-1])
                 
-        suffixsum = suffixsum[::-1]
-        
         for i in range(len(nums)):
-            if suffixsum[i] == prefixsum[i]:
+            if suffixsum[-i-1] == prefixsum[i]:
                 return i
         return -1
         
