@@ -4,8 +4,8 @@ class Solution:
         Do not return anything, modify nums in-place instead.
         """
         k = k % len(nums)
-        hello = nums[-k:]
-        hello.extend(nums[:len(nums) - k])
+        rotatedarray = nums[-k:]
+        rotatedarray.extend(nums[:len(nums) - k])
         for i in range(len(nums)):
-            nums[i] = hello[i]
+            nums[i] = rotatedarray[i]
         return nums
