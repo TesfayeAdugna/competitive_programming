@@ -18,9 +18,3 @@ class Solution:
                 while j< len(s) and s[j] < g[i]:
                     j += 1
         return Answer
-                
-                
-        """
-        1, 2
-        0, 1, 2, 3
-        """
