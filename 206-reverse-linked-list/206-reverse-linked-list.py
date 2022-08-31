@@ -6,19 +6,12 @@
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         
-        stack = []
-        while head:
-            stack.append(head.val)
-            head = head.next
+        def dfs(parent, head):
+            if not head:
+                return parent
             
-        root = None
-        if stack:
-            node = ListNode()
-            root = node
-        while stack:
-            node.val = stack.pop()
-            if stack:
-                node.next = ListNode()
-                node = node.next
-            
-        return root
+            par = dfs(head, head.next)
+            head.next = parent
+            return par
+        
+        return dfs(None, head)
