@@ -5,11 +5,7 @@ class Solution:
         for i in range(len(nums)):
             dic[nums[i]] = i
             
-        answer = []
         for i in range(len(nums)):
             if (target-nums[i]) in dic:
                 if i != dic[target-nums[i]]:
-                    answer.append(i)
-                    answer.append(dic[target-nums[i]])
-                    break
-        return answer
+                    return [i, dic[target-nums[i]]]
