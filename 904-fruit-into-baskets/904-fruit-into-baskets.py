@@ -1,8 +1,5 @@
 class Solution:
     def totalFruit(self, fruits: List[int]) -> int:
-        
-        
-        
         left, right, maxFruit = 0, 0, 0
         fruitType = {}
         while right < len(fruits):
@@ -17,7 +14,5 @@ class Solution:
                 if fruitType[fruits[left]] == 0:
                     del fruitType[fruits[left]]
                 left += 1
-                
             maxFruit = max(maxFruit, right-left)
-            
         return maxFruit
