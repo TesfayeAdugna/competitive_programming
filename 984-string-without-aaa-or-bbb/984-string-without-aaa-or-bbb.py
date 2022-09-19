@@ -2,17 +2,6 @@ class Solution:
     def strWithout3a3b(self, a: int, b: int) -> str:
         
         
-        """
-        a = 4, b = 3
-        ababa
-        aababab
-        
-        a = 4, b = 1
-        aabaa
-        
-        a = 4, b = 2
-        abaaba
-        """
         ans = []
         flag = a > b
         while a > 0 or b > 0:
@@ -34,19 +23,4 @@ class Solution:
                 flag = not flag
                     
         return "".join(ans)
-                    
-                    
         
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
