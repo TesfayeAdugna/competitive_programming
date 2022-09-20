@@ -1,8 +1,6 @@
 class Solution:
     def maxResult(self, nums: List[int], k: int) -> int:
         
-        
-        
         n = len(nums)-1
         heap = []
         ans = nums[n]
@@ -16,12 +14,6 @@ class Solution:
             heapq.heappush(heap, (-ans, i))
 
         return ans
-        
-        
-        
-        
-        
-        
         
         
         
