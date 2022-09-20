@@ -11,6 +11,7 @@ class Solution:
         for i in range(n-1, -1, -1):
             while i+k < heap[0][1]:
                 heapq.heappop(heap)
+                
             ans = nums[i] + (heap[0][0] * -1)
             heapq.heappush(heap, (-ans, i))
 
