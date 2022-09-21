@@ -1,7 +1,6 @@
 class Solution:
     def sumEvenAfterQueries(self, nums: List[int], queries: List[List[int]]) -> List[int]:
         
-        
         summ, answer, even = 0, [], set()
         
         for i in range(len(nums)):
