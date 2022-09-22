@@ -1,7 +1,6 @@
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
 
-        print("2&4: ", 2 & 2)
         n = len(nums)
         answer = []
         index = 0
