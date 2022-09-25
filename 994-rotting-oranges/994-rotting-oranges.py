@@ -1,12 +1,6 @@
 class Solution:
     def orangesRotting(self, grid: List[List[int]]) -> int:
         
-        """
-        2 2 2 0
-        2 2 0 0
-        0 0 0 0
-        0 0 0 0
-        """
         m = len(grid)
         n = len(grid[0])
         queue = deque()
@@ -26,7 +20,8 @@ class Solution:
             if idx2 - 1 >= 0:
                 neighbours.append((idx1, idx2-1))
             return neighbours
-                
+            
+        # bfs algorithm
         level = 0
         while queue:
             flag = False
@@ -40,6 +35,7 @@ class Solution:
                         flag = True
             if flag:
                 level += 1
+                
         
         for i in range(m):
             for j in range(n):
