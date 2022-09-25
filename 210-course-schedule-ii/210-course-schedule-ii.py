@@ -1,7 +1,5 @@
 class Solution:
     def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
-        
-        
         # build the graph
         visited = [0] * numCourses
         graph = defaultdict(list)
